@@ -55,7 +55,7 @@ convert(weight,convertMethode){
     <Form  weight={kilos} unit="k" onWeightChange={this.handelKilosChange}/>
     <Form  weight={pounts} unit="l" onWeightChange={this.handelPoundsChange}/>
     <Button/>
-    <Footer weight={kilos}/>
+    <Footer weight={parseFloat(kilos)}/>
     </div>
     )
   }
