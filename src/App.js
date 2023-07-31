@@ -8,7 +8,7 @@ import Button from "./composants/Button";
 class App extends React.Component{
        constructor (props){
            super(props)
-           this.state={weight:"",unit:"k"}
+           this.state={weight:"", unit:"k"}
            this.handelKilosChange=this.handelKilosChange.bind(this)
            this.handelPoundsChange=this.handelPoundsChange.bind(this);
            this.handelRest=this.handelRest.bind(this)
@@ -21,7 +21,9 @@ handelPoundsChange(InputValue){
   this.setState({unit:"k", weight:InputValue})
 
 }
-handelRest(){
+handelRest(InputValue){
+  this.setState({unit:"k", weight:""})
+
 
 }
 toLbs(kilos){
@@ -54,7 +56,7 @@ convert(weight,convertMethode){
     <Header/>
     <Form  weight={kilos} unit="k" onWeightChange={this.handelKilosChange}/>
     <Form  weight={pounts} unit="l" onWeightChange={this.handelPoundsChange}/>
-    <Button/>
+    <Button onClick={this.handelRest}/>
     <Footer weight={parseFloat(kilos)}/>
     </div>
     )
